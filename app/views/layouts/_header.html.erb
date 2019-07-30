@@ -13,12 +13,31 @@
         <i class="fa fa-search"></i>
       </form>
     </div>
+    <% if logged_in? %>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%= image_tag "noavatar.png", class: "circle-image" %>
+          <span class="caret"></span></button>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li class="divider"></li>
+          <li>
+            <%= link_to "Logout", logout_path, method: :delete %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to "Login", login_path, class: "btn btn-primary modal-login" %>
+      </div>
+    <% end %>
     <div class="user-section">
       <a><i class="fa fa-heart"></i></a>
         <a href="#" title="">
           <i class="fa fa-user"></i>
         </a>
-      <% else %>
         <a href="#" title="">
           <i class="fa fa-sign-in"></i>
         </a>
