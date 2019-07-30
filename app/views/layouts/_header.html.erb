@@ -1,0 +1,27 @@
+<!--Navigation Bar-->
+<nav class="navbar navbar-light bg-light d-flex">
+  <div class="container">
+    <div class="logo">
+      <a class="navbar-brand" href="/">
+        <%= fa_stacked_icon "apple inverse", base: "circle"%>
+        Avengers
+      </a>
+    </div>
+    <div class="m-auto">
+      <form class="form-inline search-form">
+        <input class="form-control mr-sm-2" type="search" aria-label="Search">
+        <i class="fa fa-search"></i>
+      </form>
+    </div>
+    <div class="user-section">
+      <a><i class="fa fa-heart"></i></a>
+        <a href="#" title="">
+          <i class="fa fa-user"></i>
+        </a>
+      <% else %>
+        <a href="#" title="">
+          <i class="fa fa-sign-in"></i>
+        </a>
+    </div>
+  </div>
+</nav>
