@@ -10,17 +10,32 @@
 header
 ---------------------------- */
 .navbar{
-  border-bottom: 1px solid rgba(0,0,0,.0975)
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  height: 50px;
 }
 
 .user-section{
-  a{
-    padding-left: 15px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li{
+    display: block;
+    float: left;
+    list-style-type: none;
+    padding: 10px;
+    cursor: pointer;
   }
   i.fa{
     font-size: 22px;
     color: #000000d4;
   }
+}
+
+.prev{
+  padding: inherit;
 }
 
 .search-form{
@@ -51,7 +66,13 @@ footer
   }
 }
 
-.avatar{
+img.avatar-users {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.avatar-signup{
   height: 90px;
   width: 90px;
   border-radius: 50%;
@@ -64,14 +85,6 @@ input#user_avatar {
 /* ----------------------------
     form-sign up
 ---------------------------- */
-.form-signup {
-  width: 600px;
-  float: left;
-  margin-left: 337px;
-  margin-right: 337px;
-  background-color: white;
-}
-
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
@@ -87,22 +100,6 @@ button {
   opacity: 0.9;
 }
 
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
 .signupbtn {
   background-color: #4CAF50;
   color: white;
@@ -110,52 +107,14 @@ button:hover {
   margin: 8px 0;
   border: none;
   cursor: pointer;
+  width:100%;
   opacity: 0.9;
-}
-
-/* The Modal (background) */
-.modal {
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  padding-top: 50px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: block;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
 }
 
 /* Clear floats */
@@ -167,7 +126,65 @@ hr {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
+  .signupbtn {
+   width: 100%;
+ }
+}
+
+/* ----------------------------
+    form log-in
+---------------------------- */
+
+button:hover {
+  opacity: 0.8;
+}
+
+.loginbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+span.psw {
+  float: right;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+   display: block;
+   float: none;
+ }
 }
