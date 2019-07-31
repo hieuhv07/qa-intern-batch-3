@@ -2,6 +2,15 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_one_attached :avatar
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  
+	attr_accessor :remember_token
+	before_save {email.downcase!}
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: {maximum: 255},
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
 
   validates :user_name,  presence: true, length: {maximum: Settings.name.maximum}
