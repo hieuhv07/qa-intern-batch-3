@@ -32,6 +32,15 @@ class Admin::CategoriesController < Admin::BaseController
 		end
 	end
 
+	def destroy
+		if @category.destroy
+			flash[:success] = t ".success"
+		else
+			flash[:danger] = t ".danger"
+		end
+		redirect_to admin_categories_path
+	end
+
 	private
 
 	def category_params
