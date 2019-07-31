@@ -1,0 +1,14 @@
+name:
+  maximum: 50
+email:
+  maximum: 255
+password:
+  maximum: 6
+VALID_EMAIL_REGEX: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+avatar:
+  size: 50
+session:
+  remember_me: 1
+per_page: 8
+micropost:
+  maximum: 140
