@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admintool</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "admin", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <div class="page-wrapper chiller-theme toggled">
+      <%= link_to("#", id: "show-sidebar", class: "btn btn-sm btn-dark") do %>
+        <i class="fa fa-bars"></i>
+      <% end %>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <%= link_to "Admin Tool", root_path %>
+            <div id="close-sidebar">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+          <%= render "layouts/admin/sidebar_header" %>
+          <%= render "layouts/admin/search" %>
+          <%= render "layouts/admin/sidebar_menu" %>
+        </div>
+        <%= render "layouts/admin/sidebar_footer" %>
+      </nav>
+    <main class="page-content">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </main>
+    </div>
+  </body>
+</html>

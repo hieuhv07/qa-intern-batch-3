@@ -1,0 +1,9 @@
+en:
+  admin:
+    categories:
+      form:
+        submit: "Save Changes"
+        description: "Description"
+        name: "Name"
+      new:
+        add: "Add Category"
