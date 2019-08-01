@@ -10,3 +10,6 @@ en:
     failed:
       user:
         update: Can't update user!
+  layouts:
+    admin:
+      base_title: "Demo Q&A"

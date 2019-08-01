@@ -1,0 +1,12 @@
+<tr>
+  <td><%= count_index_list category_counter %></td>
+  <td>
+    <%= link_to edit_admin_category_path category do %>
+      <%= category.name %>
+    <% end %>
+  </td>
+  <td><%= category.description %></td>
+  <td>
+    <%= link_to t(".delete"), admin_category_path(category), class: "btn btn-danger", method: :delete, data: {confirm: t(".sure")} %>
+  </td>
+</tr>

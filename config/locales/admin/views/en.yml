@@ -1,0 +1,19 @@
+en:
+  admin:
+    categories:
+      form:
+        submit: "Save Changes"
+        description: "Description"
+        name: "Name"
+      new:
+        add: "Add Category"
+        title: "New category"
+      category:
+        sure: "Are you sure?"
+        delete: "Delete"
+      index:
+        title: "Categories"
+        new_category: "New Category"
+        name: "Name"
+        description: "Description"
+        action: "Action"

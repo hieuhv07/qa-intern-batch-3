@@ -1,0 +1,6 @@
+en:
+  admin:
+    categories:
+      create:
+        success: "Create category successfully!"
+        danger: "Create category has problem!"
