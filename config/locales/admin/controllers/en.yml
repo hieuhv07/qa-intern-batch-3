@@ -4,3 +4,9 @@ en:
       create:
         success: "Create category successfully!"
         danger: "Create category has problem!"
+      update:
+        success: "Update category successfully!"
+        danger: "Update category has problem!"
+      destroy:
+        success: "Delete category successfully!"
+        danger: "Delete category has problem!"

@@ -17,3 +17,6 @@ en:
         name: "Name"
         description: "Description"
         action: "Action"
+      edit:
+        title: "Edit category"
+        edit: "Edit Category"
