@@ -4,3 +4,4 @@
 //= require popper
 //= require bootstrap
 //= require admin/custom
+//= require admin/datatable
