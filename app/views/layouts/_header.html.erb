@@ -2,10 +2,10 @@
 <nav class="navbar navbar-light bg-light d-flex">
   <div class="container">
     <div class="logo">
-      <a class="navbar-brand" href="/">
+      <%= link_to("#", class: "navbar-brand") do %>
         <%= fa_stacked_icon "apple inverse", base: "circle"%>
         Avengers
-      </a>
+      <% end %>
     </div>
     <div class="m-auto">
       <form class="form-inline search-form">
@@ -15,13 +15,12 @@
     </div>
     <div class="user-section">
       <a><i class="fa fa-heart"></i></a>
-        <a href="#" title="">
+        <%= link_to("#") do %>
           <i class="fa fa-user"></i>
-        </a>
-      <% else %>
-        <a href="#" title="">
+        <% end %>
+        <%= link_to("#") do %>
           <i class="fa fa-sign-in"></i>
-        </a>
+        <% end %>
     </div>
   </div>
 </nav>

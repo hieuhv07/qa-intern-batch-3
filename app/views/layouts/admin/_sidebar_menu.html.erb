@@ -1,0 +1,58 @@
+<div class="sidebar-menu">
+  <ul>
+    <li class="header-menu">
+      <%= link_to("#") do %>
+        <i class="fa fa-dashboard"></i>
+        <span>Dashboard</span>
+      <% end %>
+    </li>
+    <li class="header-menu">
+      <span>Manager</span>
+    </li>
+    <li class="sidebar-dropdown">
+      <%= link_to("#") do %>
+        <i class="fa fa-user-circle"></i>
+        <span>User</span>
+      <% end %>
+      <div class="sidebar-submenu">
+        <ul>
+          <li>
+            <%= link_to "All users", "#" %>
+          </li>
+          <li>
+            <%= link_to "New user", "#" %>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="sidebar-dropdown">
+      <%= link_to(admin_categories_path) do %>
+        <i class="fa fa-list"></i>
+        <span>Category</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to("#") do %>
+        <i class="fa fa-commenting-o"></i>
+        <span>Post</span>
+        <span class="badge badge-pill badge-primary">New</span>
+      <% end %>
+    </li>
+    <li class="sidebar-dropdown">
+      <%= link_to("#") do %>
+        <i class="fa fa-hashtag"></i>
+        <span>Tags</span>
+      <% end %>
+      <div class="sidebar-submenu">
+        <ul>
+          <li>
+            <%= link_to "All tags", "#" %>
+          </li>
+          <li>
+            <%= link_to "New tag", "#" %>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
