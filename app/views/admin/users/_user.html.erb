@@ -1,7 +1,8 @@
-<tr>
+<tr class="data-user">
   <td><%= user.id %></td>
   <td><%= user.user_name %></td>
   <td><%= user.full_name %></td>
   <td><%= user.email %></td>
-  <td><%= user.role %></td>
+  <td id="load-role-<%= user.id %>"><%= user.role %></td>
+  <td><%= link_to_toggle_user_subscription(user) %></td>
 </tr>
