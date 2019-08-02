@@ -1,0 +1,6 @@
+<%if @user.errors.present? %>
+  $("#message_errors").html('<%= j render "shared/error_messages", object: @user %>')
+  $(".modal").animate({scrollTop : 0},500);
+<% else %>
+  location.reload();
+<% end %>

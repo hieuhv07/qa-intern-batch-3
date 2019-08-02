@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "admin/datatable";
 
 @keyframes swing {
   0% {
@@ -422,4 +423,138 @@ body {
 
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
+}
+
+.btn {
+  border: none;
+  background-color: #e7e7e7;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Green */
+.success {
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Blue */
+.info {
+  color: dodgerblue;
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  color: red;
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  color: black;
+}
+
+.default:hover {
+  background: deepskyblue;
+}
+
+/* ----------------------------
+    form-create
+---------------------------- */
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.signupbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width:100%;
+  opacity: 0.9;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+     width: 100%;
+  }
+}
+
+img#img_prev {
+  width: 100px;
+}
+
+input#user_avatar {
+  padding: 3px;
+}
+
+.prev{
+  padding: inherit;
+}
+
+.signupbtn {
+  width: 94%;
+  margin: 14px 0 0px 15px;
+  padding: 11px;
+}
+#btn-close {
+  width: 99%;
+  margin: 0px 0px 0px 1px;
+  padding: 9px;
+  color: black;
+}
+#btn-default {
+    width: 14%;
 }

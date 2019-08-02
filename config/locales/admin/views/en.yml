@@ -7,3 +7,20 @@ en:
         name: "Name"
       new:
         add: "Add Category"
+        title: "Category"
+    dashboard:
+      index:
+        dashboard: Dashboard
+    users:
+      index:
+        user: User
+  layouts:
+    admin:
+      sidebar_menu:
+        user: User
+  title: AdminTool
+  messages:
+    success:
+      admin_user:
+        create: "Created"
+
