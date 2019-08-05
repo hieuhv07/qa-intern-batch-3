@@ -1,0 +1,5 @@
+<% if @tag.errors.present? %>
+  $("#errors").html('<%= j render "shared/error_messages", object: @tag %>');
+<% elsif flash[:success] %>
+   window.location.reload();
+<% end %>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :categories, except: :show
     resources :users, except: [:edit, :show]
+    resources :tags
   end
 
   resources :account_activations, only: [:edit]

@@ -1,0 +1,9 @@
+<tr id="tag_<%= tag.id %>">
+  <td><%= tag.id %></td>
+  <td><%= tag.name %></td>
+  <td>
+    <%= link_to "Edit | ", edit_admin_tag_path(tag), id: "edit-#{tag.id}", remote: true %>
+    <%= link_to "Destroy", admin_tag_path(tag), method: :delete, remote: true, data: {confirm: "Are you sure?"}, class: "destroy-#{tag.id}" %>
+  </td>
+</tr>
+

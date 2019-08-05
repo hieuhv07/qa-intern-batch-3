@@ -1,0 +1,13 @@
+<i class="fa fa-times" data-dismiss="modal" style="float: right"></i>
+<%= form_for [:admin, @tag], html: {class: "form-horizontal form-edit-user tableCreateTag"}, remote: true do |f| %>
+  <div class="container">
+    <div id="message_errors">
+    </div>
+    <h1>Create Tag</h1>
+    <%= f.label :name, class: "col-form-label" %>
+    <%= f.text_field :name, class: "form-control", id: "tag-name" %>
+  </div>
+  <div class="container container-class">
+    <%= f.submit class: "btn btn-primary btn_create_tag" %>
+  </div>
+<% end %>

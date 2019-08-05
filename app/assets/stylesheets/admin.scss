@@ -428,7 +428,6 @@ body {
 
 .btn {
   border: none;
-  background-color: #e7e7e7;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
@@ -569,9 +568,25 @@ input#user_avatar {
 .data-user td{
   text-align: center;
 }
+
 #title-user{
   margin-left: 2%;
 }
+
 .header-user th{
   text-align: center;
 }
+
+/* Style form update tags */
+.fa-times {
+ cursor: pointer;
+}
+
+.container-class {
+  text-align: center;
+}
+
+.btn_create_tag {
+  margin-top: 10px;
+}
+
