@@ -1,0 +1,3 @@
+$('#btn-set-<%= @user.id %>').replaceWith('<%= j link_to_toggle_user_subscription(@user) %>');
+$('#load-role-<%= @user.id %>').text('<%= @user.role %>')
+$('#flash').html('<%= j render "shared/flash" %>')
