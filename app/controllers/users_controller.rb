@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: :index
+
   def index
+    @users = User.all
   end
 
   def new
-    @user = User.new
   end
 
   def create
@@ -12,8 +14,9 @@ class UsersController < ApplicationController
       flash[:success] = t ".welcome"
       redirect_to root_path
     else
-      flash[:danger] = t ".create_fail"
-      render :new
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
@@ -21,6 +24,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :email, :full_name, :user_name, :role,
-      :password, :password_confirmation, :avatar
+    :password, :password_confirmation, :avatar
   end
 end

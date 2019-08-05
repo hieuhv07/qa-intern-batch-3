@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_one_attached :avatar
+
   has_secure_password
 
   validates :user_name, presence: true, length: {maximum: Settings.name.maximum}

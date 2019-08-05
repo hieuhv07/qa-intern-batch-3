@@ -1,0 +1,18 @@
+<div class="imgcontainer">
+  <%= image_tag "login.png", class: "avatar" %>
+</div>
+<%= form_for :session, url: login_path, remote: true do |f| %>
+  <div id="message_login">
+  </div>
+  <div class="container">
+    <%= f.label :user, class: "col-form-label" %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Email or Username",required: true %>
+    <%= f.label :password, class: "col-form-label" %>
+    <%= f.password_field :password, class: "form-control",placeholder: "Enter your password", required: true %>
+    <%= f.submit "Log in", class: "loginbtn" %>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+<% end %>

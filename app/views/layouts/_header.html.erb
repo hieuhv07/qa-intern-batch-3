@@ -1,26 +1,65 @@
 <!--Navigation Bar-->
-<nav class="navbar navbar-light bg-light d-flex">
-  <div class="container">
-    <div class="logo">
-      <%= link_to("#", class: "navbar-brand") do %>
-        <%= fa_stacked_icon "apple inverse", base: "circle"%>
-        Avengers
-      <% end %>
+<nav class="navbar navbar-light bg-light d-flex header">
+  <div class="logo">
+    <a class="navbar-brand" href="/">
+      <%= fa_stacked_icon "apple inverse", base: "circle"%>
+      Avengers
+    </a>
+  </div>
+  <div class="m-auto">
+    <form class="form-inline search-form">
+      <input class="form-control mr-sm-2" type="search" aria-label="Search">
+      <i class="fa fa-search"></i>
+    </form>
+  </div>
+  <% if logged_in? %>
+    <div class="dropdown">
+      <span href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%= image_tag current_user.avatar, class: "avatar-users" %>
+        <%= current_user.full_name %>
+        <span class="caret"></span></button>
+      </span>
+      <ul class="dropdown-menu">
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        </li>
+      </ul>
     </div>
-    <div class="m-auto">
-      <form class="form-inline search-form">
-        <input class="form-control mr-sm-2" type="search" aria-label="Search">
-        <i class="fa fa-search"></i>
-      </form>
-    </div>
+  <% else %>
     <div class="user-section">
-      <a><i class="fa fa-heart"></i></a>
-        <%= link_to("#") do %>
-          <i class="fa fa-user"></i>
-        <% end %>
-        <%= link_to("#") do %>
-          <i class="fa fa-sign-in"></i>
-        <% end %>
+      <ul>
+        <li><i class="fa fa-heart"></i></li>
+          <li data-toggle="modal" data-target="#login-signup">
+            <i class="fa fa-sign-in"></i>
+          </li>
+      </ul>
+    </div>
+  <% end %>
+</nav>
+<div id="login-signup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <ul class="navbar nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home" class="btn btn-outline-primary active">Login</a></li>
+          <li><a data-toggle="tab" href="#menu2" class="btn btn-outline-success">Sign Up</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active show">
+            <%= render "sessions/form_login" %>
+          </div>
+          <div id="menu2" class="tab-pane fade">
+            <%= render "users/form" %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
-</nav>
+</div>

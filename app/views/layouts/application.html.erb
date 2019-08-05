@@ -12,7 +12,7 @@
   <body>
     <%= render "layouts/header" %>
     <main class="container" style="min-height: 500px;">
-      <%= render "shared/flash" %>
+      <%= render "layouts/flashmessages", flash: flash %>
       <%= yield %>
     </main>
     <%= render "layouts/footer" %>
