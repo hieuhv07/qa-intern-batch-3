@@ -1,0 +1,8 @@
+en:
+  posts:
+    new:
+      title: "Title"
+      category: "Category"
+      tag: "Tag"
+      content: "Content"
+      submit: "Save Changes"

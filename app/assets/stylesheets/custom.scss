@@ -183,8 +183,8 @@ span.psw {
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
-    display: block;
-    float: none;
+  display: block;
+  float: none;
  }
 }
 
@@ -214,4 +214,13 @@ span.psw {
 
 #img{
   padding: 3px;
+}
+
+/*form posts*/
+label{
+  color: black;
+  font-weight: bold;
+}
+.ck.ck-content {
+  height: 250px;
 }

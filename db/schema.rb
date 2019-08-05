@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_03_135353) do
+ActiveRecord::Schema.define(version: 2019_08_06_061954) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -86,8 +86,6 @@ ActiveRecord::Schema.define(version: 2019_08_03_135353) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -117,5 +115,4 @@ ActiveRecord::Schema.define(version: 2019_08_03_135353) do
   add_foreign_key "posts", "users"
   add_foreign_key "tag_posts", "posts"
   add_foreign_key "tag_posts", "tags"
-  add_foreign_key "tags", "users"
 end

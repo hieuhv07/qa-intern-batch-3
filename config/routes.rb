@@ -3,10 +3,15 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   root "home#index"
 
-  delete "/logout", to: "sessions#destroy"
+  get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
-  resources :users
+  resources :users do
+    resources :posts, on: :member
+  end
+
+  resources :tags
 
   namespace :admin do
     root "dashboard#index"
