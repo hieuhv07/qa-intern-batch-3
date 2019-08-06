@@ -11,6 +11,7 @@ gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.5"
 gem "config"
 gem "flag-icons-rails"
+gem "figaro"
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
 gem 'bootstrap', '~> 4.1.1'

@@ -11,7 +11,10 @@
     <%= f.password_field :password, class: "form-control",placeholder: "Enter your password", required: true %>
     <%= f.submit "Log in", class: "loginbtn" %>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me</span>
+      <% end %>
     </label>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
