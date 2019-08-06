@@ -1,0 +1,14 @@
+<h1 id="forgot">Forgot password</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 btn-reset">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <div class="">
+        <%= f.label :email %>
+        <%= f.email_field :email,required: true, class: "form-control" %>
+      </div>
+      <div class="sub-reset" >
+        <%= f.submit "Submit", class: "sub btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

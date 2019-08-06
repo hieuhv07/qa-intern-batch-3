@@ -15,7 +15,11 @@
   <% if logged_in? %>
     <div class="dropdown">
       <span href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <%= image_tag current_user.avatar, class: "avatar-users" %>
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, class: "avatar-users" %>
+        <% else %>
+          <%= image_tag "login.png", class: "avatar-users" %>
+        <% end %>
         <%= current_user.full_name %>
         <span class="caret"></span></button>
       </span>
