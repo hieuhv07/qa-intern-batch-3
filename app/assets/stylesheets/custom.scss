@@ -134,7 +134,6 @@ hr {
 /* ----------------------------
     form log-in
 ---------------------------- */
-
 button:hover {
   opacity: 0.8;
 }
@@ -187,4 +186,24 @@ span.psw {
     display: block;
     float: none;
  }
+}
+
+/* ----------------------------
+    password-reset
+---------------------------- */
+.col-md-6.col-md-offset-3.btn-reset {
+  padding: 13px 0px;
+  margin: 15px 260px;
+}
+
+.sub{
+  width: 100%;
+}
+
+.sub-reset{
+  padding: 26px 0px;
+}
+
+#forgot{
+  padding: 0 334px 0 334px
 }
