@@ -23,10 +23,14 @@ $(document).ready(function() {
 
   $("#close-sidebar").click(function() {
     $(".page-wrapper").removeClass("toggled");
+    $(".dataTables_scrollHeadInner").css('width', '100%')
+    $(".table.table-striped.table-bordered.dataTable.no-footer").css('width', '100%')
   });
 
   $("#show-sidebar").click(function() {
     $(".page-wrapper").addClass("toggled");
+    $(".dataTables_scrollHeadInner").css('width', '100%')
+    $(".table.table-striped.table-bordered.dataTable.no-footer").css('width', '100%')
   });
 
   $('#table_id').DataTable({
@@ -34,7 +38,7 @@ $(document).ready(function() {
     "order": [[ 0, 'DESC' ]],
     "pageLength": 25,
     "columnDefs": [
-      { "orderable": false, "targets": [5] },
+      { "orderable": false, "targets": [6] },
     ]
   });
 });

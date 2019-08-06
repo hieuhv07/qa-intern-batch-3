@@ -16,7 +16,6 @@ class User < ApplicationRecord
     format: {with: Settings.VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: { minimum: Settings.password.maximum },
     allow_nil: true
-  validate :avatar_presence
 
   enum role: {user: 0, admin: 1}
 
@@ -77,9 +76,4 @@ class User < ApplicationRecord
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
-
-  def avatar_presence
-    errors.add(:avatar, "can't be blank") unless avatar.attached?
-  end
-
 end
