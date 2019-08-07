@@ -30,7 +30,7 @@
     </nav>
     <main class="page-content">
       <div class="container-fluid">
-        <%= render "shared/flash" %>
+        <%= render "layouts/flashmessages", flash: flash %>
         <%= yield %>
       </div>
     </main>

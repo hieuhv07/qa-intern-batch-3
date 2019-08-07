@@ -8,13 +8,26 @@ module ApplicationHelper
     User.roles.keys.map {|role| [role.titleize,role]}
   end
 
-  def link_to_toggle_user_subscription(user)
+  def link_to_toggle_user_subscription user
     if user.admin?
-      link_to("Set User", admin_user_path(user, value: :user),
-        method: :patch, remote: true, class: "btn info custom-set-role", id: "btn-set-#{user.id}")
+      link_to("Set User", admin_user_path(user),
+        method: :patch, remote: true, class: "btn info custom-btn", id: "btn-set-#{user.id}")
     elsif user.user?
-      link_to("Set Admin", admin_user_path(user, value: :admin),
-        method: :patch, remote: true, class: "btn info custom-set-role", id: "btn-set-#{user.id}")
+      link_to("Set Admin", admin_user_path(user),
+        method: :patch, remote: true, class: "btn info custom-btn", id: "btn-set-#{user.id}")
     end
+  end
+
+  def link_to_delete user
+    if user.user?
+      link_to("Delete", admin_user_path(user), method: :delete,
+        data: { confirm: "You sure?" }, class: "btn danger custom-btn", id: "btn-delete-#{user.id}")
+    elsif user.admin?
+      link_to("","#",id: "btn-delete-#{user.id}")
+    end
+  end
+
+  def valid_admin user
+    current_user&.admin? && !current_user?(user)
   end
 end

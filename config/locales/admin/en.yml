@@ -24,9 +24,14 @@ en:
       admin_user:
         create: Created
         update: Role updated!
+        delete: User deleted!
     failed:
       admin_user:
         update: Can not update role!
         not_find: Could not find user!
+        delete: Delete failed!
+        delete_current_user: You can't delete your account!
+        permit: You aren't admin!
+        not_set_role: You can't set role for your account!
   user: User
 

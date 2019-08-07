@@ -4,5 +4,11 @@
   <td><%= user.full_name %></td>
   <td><%= user.email %></td>
   <td id="load-role-<%= user.id %>"><%= user.role %></td>
-  <td><%= link_to_toggle_user_subscription(user) %></td>
+  <td><%= user.activated %></td>
+  <td>
+    <% if valid_admin user %>
+      <%= link_to_toggle_user_subscription(user) %>
+      <%= link_to_delete(user) %>
+    <% end %>
+  </td>
 </tr>
