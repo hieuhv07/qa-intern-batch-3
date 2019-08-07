@@ -1,0 +1,11 @@
+<i class="fa fa-times" data-dismiss="modal" style="float: right;"></i>
+<%= form_for [:admin, @tag], remote: true, method: :patch do %>
+<div id="errors"></div>
+  <div class="container">
+    <h2>Update tag</h2>
+    <%= text_field_tag :name, @tag.name, class: "form-control" %>
+  </div>
+  <div class="container text-center" style="display: inline-block;">
+    <%= submit_tag "update", class: "btn btn-primary btn_update_tag" %>
+  </div>
+<% end %>

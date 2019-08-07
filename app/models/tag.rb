@@ -1,5 +1,6 @@
 class Tag < ApplicationRecord
-  has_many :tag_posts
+  has_many :tag_posts, dependent: :destroy
   has_many :posts, through: :tag_posts
-  belongs_to :user
+
+  validates :name, length: { in: 3..10 }
 end
