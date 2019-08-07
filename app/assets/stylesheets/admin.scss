@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "admin/datatable";
+@import "toastr";
 
 @keyframes swing {
   0% {
@@ -556,14 +557,21 @@ input#user_avatar {
   color: black;
 }
 #btn-default {
-    width: 14%;
+  width: 14%;
+  margin-left: 2%;
 }
 
-.custom-set-role{
+.custom-btn{
   padding: initial;
   width: 80px;
   color: black;
 }
 .data-user td{
+  text-align: center;
+}
+#title-user{
+  margin-left: 2%;
+}
+.header-user th{
   text-align: center;
 }

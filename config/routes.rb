@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboard#index"
     resources :categories, except: :show
-    resources :users, only: [:update, :create, :index]
+    resources :users, except: [:edit, :show]
   end
 
   resources :account_activations, only: [:edit]

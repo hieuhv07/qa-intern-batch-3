@@ -1,3 +1,8 @@
 $('#btn-set-<%= @user.id %>').replaceWith('<%= j link_to_toggle_user_subscription(@user) %>');
-$('#load-role-<%= @user.id %>').text('<%= @user.role %>')
-$('#flash').html('<%= j render "shared/flash" %>')
+$('#btn-delete-<%= @user.id %>').replaceWith('<%= j link_to_delete(@user) %>');
+$('#load-role-<%= @user.id %>').text('<%= @user.role %>');
+<% if flash[:success] %>
+  toastr.success("<%= flash[:success] %>");
+<% else %>
+  toastr.error("<%= flash[:danger] %>");
+<% end %>
