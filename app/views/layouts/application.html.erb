@@ -13,6 +13,7 @@
     <%= render "layouts/header" %>
     <main class="container" style="min-height: 500px;">
       <%= render "layouts/flashmessages", flash: flash %>
+      <%= render "shared/profile_modal" %>
       <%= yield %>
     </main>
     <%= render "layouts/footer" %>

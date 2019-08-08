@@ -1,0 +1,41 @@
+<div class="modal-body">
+  <div class="modal-body-content">
+    <div class="container">
+      <%= form_for @user, remote: true do |f| %>
+        <div class="panel-body" >
+          <div class="container">
+            <h1>Edit profile</h1>
+            <div id="profile_errors">
+            </div>
+            <hr>
+            <div class="form-group row" style="padding: 25px">
+              <div class="col-sm-3">
+                <% if current_user.avatar.attached? %>
+                  <%= image_tag @user.avatar, class: "avatar-signup", id: "preview_edit" %>
+                <% else %>
+                  <%= image_tag "login.png", class: "avatar-signup", id: "preview_edit" %>
+                <% end %>
+              </div>
+              <div class="prev col-sm-9">
+                <%= f.file_field :avatar, class: "form-control", id: "img" %>
+              </div>
+            </div>
+
+            <%= f.label :user_name, "Username", class: "col-form-label" %>
+            <%= f.text_field :user_name, class: "form-control", required: true %>
+
+            <%= f.label :full_name, class: "col-form-label" %>
+            <%= f.text_field :full_name, class: "form-control", required: true %>
+
+            <%= f.label :email, class: "col-form-label" %>
+            <%= f.text_field :email, class: "form-control", required: true %>
+
+
+            <%= f.button "Submit", class: "signupbtn custom-admin" %>
+            <%= f.button "Close", class: "btn btn-danger btn-xs pull-right custom-admin-close", "data-dismiss": "modal" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

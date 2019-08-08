@@ -21,11 +21,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def update
-    if @user.update_attributes user_params
-      redirect_to @user, success: "update user success"
-    else
-      render :edit, danger: "update faild"
+    respond_to do |format|
+      if @user.update_attributes user_params
+        format.js { flash[:success]= t "messages.success.user.update" }
+      else
+        format.js { flash[:danger]= t "messages.failed.user.update"}
+      end
     end
   end
 

@@ -12,12 +12,12 @@
         <%= image_tag "login.png", class: "avatar-signup", id: "img_prev" %>
       </div>
       <div class="prev col-sm-9">
-        <%= f.file_field :avatar, class: "form-control", onchange: "readURL(this)" %>
+        <%= f.file_field :avatar, class: "form-control preview"%>
       </div>
     </div>
 
     <%= f.label :email, class: "col-form-label" %>
-    <%= f.email_field :email, class: "form-control",required: true %>
+    <%= f.email_field :email, class: "form-control", required: true %>
 
     <%= f.label :user_name, class: "col-form-label" %>
     <%= f.text_field :user_name, class: "form-control", required: true %>
