@@ -41,29 +41,38 @@
           </li>
       </ul>
     </div>
-  <% end %>
-</nav>
-<div id="login-signup" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-body">
-        <ul class="navbar nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home" class="btn btn-outline-primary active">Login</a></li>
-          <li><a data-toggle="tab" href="#menu2" class="btn btn-outline-success">Sign Up</a></li>
-        </ul>
-        <div class="tab-content">
-          <div id="home" class="tab-pane fade in active show">
-            <%= render "sessions/form_login" %>
+
+    <div id="login-signup" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <ul class="navbar nav nav-tabs">
+              <li class="active">
+                <%= link_to "#home", class: "btn btn-outline-primary active", data: {toggle: "tab"} do %>
+                  Login
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#menu2",class: "btn btn-outline-success", data: {toggle: "tab"} do %>
+                  Sign Up
+                <% end %>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active show">
+                <%= render "sessions/form_login" %>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <%= render "users/form" %>
+              </div>
+            </div>
           </div>
-          <div id="menu2" class="tab-pane fade">
-            <%= render "users/form" %>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
     </div>
-  </div>
-</div>
+  <% end %>
+</nav>

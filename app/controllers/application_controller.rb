@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
     store_location
     redirect_to root_path, danger: "Please log in."
   end
+
+  def check_correct_user
+    @user = User.find_by params[:id]
+    unless current_user? @user
+      redirect_to root_path, danger: "You cannot access this page!"
+    end
+  end
 end
