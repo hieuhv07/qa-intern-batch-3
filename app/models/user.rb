@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :user_name, presence: true, length: {maximum: Settings.name.maximum}
+  validates :full_name, presence: true, length: {maximum: Settings.name.maximum}
   validates :email, presence: true, length: {maximum: Settings.email.maximum},
     format: {with: Settings.VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: { minimum: Settings.password.maximum },

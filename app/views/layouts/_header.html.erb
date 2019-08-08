@@ -25,7 +25,7 @@
       </span>
       <ul class="dropdown-menu">
         <li><%= link_to "Admin Tool", admin_root_path %></li>
-        <li><a href="#">Edit profile</a></li>
+        <li><%= link_to "Edit profile", edit_user_path(current_user), remote: true %></li>
         <li class="divider"></li>
         <li>
           <%= link_to "Logout", logout_path, method: :delete %>

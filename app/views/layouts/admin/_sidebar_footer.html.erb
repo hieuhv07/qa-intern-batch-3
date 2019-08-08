@@ -1,17 +1,16 @@
  <div class="sidebar-footer">
-  <%= link_to("#") do %>
-    <i class="fa fa-bell"></i>
-    <span class="badge badge-pill badge-warning notification">3</span>
+  <%= link_to(root_path, title: "Back", "data-toggle": "tooltip", "data-placement": "top") do %>
+    <i class="fa fa-arrow-left"></i>
   <% end %>
   <%= link_to("#") do %>
     <i class="fa fa-envelope"></i>
-    <span class="badge badge-pill badge-success notification">7</span>
+    <span class="badge badge-pill badge-success notification"></span>
   <% end %>
-  <%= link_to("#") do %>
+  <%= link_to(edit_user_path(current_user),
+    title: "Edit profile", "data-toggle": "tooltip", "data-placement": "top", remote: true) do %>
     <i class="fa fa-cog"></i>
-    <span class="badge-sonar"></span>
   <% end %>
-  <%= link_to(logout_path, method: :delete) do %>
+  <%= link_to(logout_path, method: :delete, title: "Logout", "data-toggle": "tooltip", "data-placement": "top") do %>
     <i class="fa fa-power-off"></i>
   <% end %>
 </div>

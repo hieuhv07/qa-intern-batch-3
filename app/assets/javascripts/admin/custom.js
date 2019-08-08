@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $(".sidebar-dropdown > a").click(function() {
     $(".sidebar-submenu").slideUp(20);
-
     if ($(this).parent().hasClass("active")) {
         $(".sidebar-dropdown").removeClass("active");
         $(this).parent().removeClass("active");
@@ -32,6 +31,7 @@ $(document).ready(function() {
       { "orderable": false, "targets": [6] },
     ]
   });
+
 // Table tags
   $('#container_tags').DataTable({
     scrollY: 500,
@@ -41,5 +41,23 @@ $(document).ready(function() {
     { "orderable": false, "targets": [2] },
     ]
   });
+
+  $(".preview").change(function() {
+    readURL(this, '#img_prev');
+  });
 });
 
+
+
+function readURL(f, previewId) {
+  if (f.files && f.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $(previewId)
+        .attr('src', e.target.result);
+    };
+
+    reader.readAsDataURL(f.files[0]);
+  }
+}

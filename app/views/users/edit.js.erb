@@ -1,0 +1,5 @@
+$("#edit-user").modal("show")
+$('#content-edit-user').html('<%= j render "form_edit", object: @user %>');
+$("#img").on('change',function() {
+  readURL(this, '#preview_edit');
+});

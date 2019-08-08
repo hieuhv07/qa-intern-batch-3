@@ -12,6 +12,8 @@ class Admin::UsersController < Admin::BaseController
     @user.activated_at = Time.zone.now
     if @user.save
       flash[:success] = t "messages.success.admin_user.create"
+    else
+      flash[:danger] = t "messages.failed.admin_user.create"
     end
     respond_to do |format|
       format.js
@@ -27,9 +29,9 @@ class Admin::UsersController < Admin::BaseController
       else
         @user.role = @user.admin? ? :user : :admin
         if @user.save
-          format.js { flash[:success] = t "messages.success.admin_user.update" }
+          format.js { flash.now[:success] = t "messages.success.admin_user.update" }
         else
-          format.js { flash[:danger] = t "messages.failed.admin_user.update" }
+          format.js { flash.now[:danger] = t "messages.failed.admin_user.update" }
         end
       end
     end

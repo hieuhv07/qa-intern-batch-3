@@ -22,11 +22,12 @@ en:
   messages:
     success:
       admin_user:
-        create: Created
+        create: User created!
         update: Role updated!
         delete: User deleted!
     failed:
       admin_user:
+        create: Create failed!
         update: Can not update role!
         not_find: Could not find user!
         delete: Delete failed!

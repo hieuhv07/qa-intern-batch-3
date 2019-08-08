@@ -3,3 +3,10 @@ en:
     create:
       welcome: welcome To The Avenges Team
       create_fail: create account fails
+  messages:
+    success:
+      user:
+        update: Profile updated!
+    failed:
+      user:
+        update: Can't update user!

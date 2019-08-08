@@ -1,9 +1,9 @@
-function readURL(f) {
+function readURL(f, previewId) {
   if (f.files && f.files[0]) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      $('#img_prev')
+      $(previewId)
         .attr('src', e.target.result);
     };
 
@@ -11,8 +11,8 @@ function readURL(f) {
   }
 }
 
-$(document).on("turbolinks:load", function(){
-  $(".preview").change(function(){
-    readURL(this);
-  })
-})
+$(document).ready(function() {
+  $(".preview").change(function() {
+    readURL(this, '#img_prev');
+  });
+});

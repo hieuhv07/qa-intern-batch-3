@@ -1,0 +1,7 @@
+<% if flash[:success] %>
+  window.location.href="<%= request.referrer %>"
+  toastr.success('<%= flash[:success] %>');
+<% elsif flash[:danger] %>
+  $("#profile_errors").html('<%= j render "shared/error_messages", object: @user %>');
+  toastr.error('<%= flash[:danger] %>');
+<% end %>
